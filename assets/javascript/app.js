@@ -10,35 +10,48 @@ $('#submit').on('click', function (event) {
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-    //var performers = response.events.performers;
-     
-     var results = response.events;
-     console.log(results);
+
+
+    var results = response.events;
+    console.log(results);
     for (var i = 0; i < results.length; i++) {
-      
-      
+
       var musicDiv = $('<div>');
-     
       var location = $('<p>').text("Location: " + results[i].venue.display_location);
       var date = $('<p>').text("Date: " + results[i].datetime_local);
       var link = $('<a>').text("Click Here to Purchase Ticket");
-      
+
       link.attr('href', results[i].url);
+
       musicDiv.addClass('music-div');
 
-      
+      for (var j = 0; j < results[i].performers.length; j++) {
+
+        var performers = response.events[i].performers[j].name;
+
+        var artistName = $('<p>').text("Artist: ");
+
+        var art = artistName.append(performers);
+
+        var sing = $('<div>');
+
+        sing.append(art);
+
+      console.log(art);
+
+      }
+      musicDiv.append(sing);
       musicDiv.append(location);
       musicDiv.append(date);
       musicDiv.append(link);
 
       $('.container').append(musicDiv);
       
-     
     }
-    //for (var j = 0; j < performers.length; j++) {
-      //var name = $ ('<p>').text("Artist: " + performers[j]);
-      //musicDiv.prepend(name);}
-    
+
+
+
+
   }
 
 
