@@ -43,7 +43,7 @@ $('#submit').on('click', function (event) {
             var musicDiv = $('<div>');
 
             var artistName = $('<p>').text("Artist: ");
-            var date = $('<p>').text("Date: " + results[i].datetime_local);
+            var date = $('<p>').text("Date: " + moment(results[i].datetime_local, 'YYYY-MM-DD HH:mm').format('MMMM Do YYYY, hh:mm A'));
             var name = $('<p>').text(results[i].venue.name);
             var address = $('<p>').text(results[i].venue.address);
             var address2 = $('<p>').text(results[i].venue.extended_address);
