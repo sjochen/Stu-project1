@@ -27,9 +27,16 @@
     <div class="container">
         <div class="jumbotron bg-dark">
             <h1 class="text-center text-light">Search By Area</h1>
-            <h3 class="text-center text-light">Search for concerts in a specific area by zip code</h3>
-            <label for="name" class="text-light">Zip Code</label>
-            <input class="form-control" id="name" type="text" placeholder="23233">
+            <h3 class="text-center text-light">Search for concerts in a specific area by Zip Code</h3>
+            <label for="area" class="text-light">Search Zip Code</label>
+            <input class="form-control" id="area" type="text" placeholder="23219">
+            <label for="range" class="text-light">Select Search Range (Miles)</label>
+            <select class="form-control" id="range">
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
+                <option>200</option>
+            </select>
             <br>
             <button class="btn btn-primary" id="submit">Submit</button>
         </div>
@@ -42,6 +49,7 @@
     </div>
 </body>
 
-<script src="assets/javascript/app.js"></script>
+<script src="assets/javascript/app2.js"></script>
+<script type="text/javascript" src="assets/javascript/spotify.js"></script>
 
 </html>

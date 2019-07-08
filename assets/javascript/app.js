@@ -48,22 +48,22 @@ $('#submit').on('click', function (event) {
 
       musicDiv.addClass('music-div');
 
+      var sing = $('<div>');
+      var artistName = $('<p>').text("Artist: ");
+      var art; 
 
       for (var j = 0; j < results[i].performers.length; j++) {
 
         var performers = response.events[i].performers[j].name;
-
-        var artistName = $('<p>').text("Artist: ");
-
-        var art = artistName.append(performers);
-
-        var sing = $('<div>');
-
-        sing.append(art);
+        if (j === 0) {
+        art = artistName.append(performers);
+        }else {
+        art = artistName.append(", " + performers); 
+        }
+      }
+      sing.append(art);
 
       console.log(art);
-
-      }
       musicDiv.append(sing);
 
       musicDiv.append(location);
@@ -72,24 +72,9 @@ $('#submit').on('click', function (event) {
 
       $('.container').append(musicDiv);
 
-      
-    }
-
-
-
-
 
     }
-    //for (var j = 0; j < performers.length; j++) {
-    //var name = $ ('<p>').text("Artist: " + performers[j]);
-    //musicDiv.prepend(name);}
-
-
-  }
-
-
-
-
+    }  
   )
 });
 
