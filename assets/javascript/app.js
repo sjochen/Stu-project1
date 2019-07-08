@@ -39,9 +39,8 @@ $('#submit').on('click', function (event) {
 
 
       var musicDiv = $('<div>');
-
+      var date = $('<p>').text("Date: " + moment(response.events[i].datetime_local, 'YYYY-MM-DD HH:mm').format('MMMM Do YYYY, hh:mm A'));
       var location = $('<p>').text("Location: " + results[i].venue.display_location);
-      var date = $('<p>').text("Date: " + results[i].datetime_local);
       var link = $('<a>').text("Click Here to Purchase Ticket");
 
       link.attr('href', results[i].url);
@@ -54,7 +53,8 @@ $('#submit').on('click', function (event) {
 
       for (var j = 0; j < results[i].performers.length; j++) {
 
-        var performers = response.events[i].performers[j].name;
+        
+        var performers = results[i].performers[j].name;
         if (j === 0) {
         art = artistName.append(performers);
         }else {
@@ -65,7 +65,7 @@ $('#submit').on('click', function (event) {
 
       console.log(art);
       musicDiv.append(sing);
-
+      musicDiv.append(date)
       musicDiv.append(location);
       musicDiv.append(date);
       musicDiv.append(link);
