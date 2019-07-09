@@ -29,7 +29,7 @@
         <div class="jumbotron bg-dark">
             <h1 class="text-center text-light">Search By Artist</h1>
             <h3 class="text-center text-light">Search for concerts by your favorite artist!</h3>
-            <label for="name text-white">Artist</label>
+            <label for="name" class="text-light">Artist</label>
             <input class="form-control" id="name" type="text" placeholder="Enter Artist Here">
             <br>
             <button class="btn btn-primary" id="submit">Submit</button>
@@ -37,12 +37,16 @@
             <div id="main"></div>
         </div>
     </div>
-    <div id="song-box" class="fixed-top"></div>
+    <div id="song-box" class="card fixed-top bg-dark">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-light">Songs from search results:</h6>
+        </div>
+      </div>
     <div class="container">
 
     </div>
     <div>
-        <button class="btn btn-primary" id="back"><a href="index.html">Home</a></button>
+        <button class="btn btn-primary" id="back"><a class="text-light" href="index.html">Home</a></button>
     </div>
 </body>
 

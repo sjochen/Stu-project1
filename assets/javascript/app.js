@@ -30,6 +30,7 @@ $('#submit').on('click', function (event) {
       var songArtist = data.tracks.items[i].artists[0].name;
       var songDiv = $('<div>');
       var songLink = $('<a>').attr('href', songURL);
+      songLink.addClass('text-primary')
       songLink.attr('target', '_blank');
       songLink.text('Click Here to listen to ' + '"' +songName + '"' + ' by ' + songArtist)
       songDiv.append(songLink);

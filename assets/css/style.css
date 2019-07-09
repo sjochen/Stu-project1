@@ -1,7 +1,10 @@
-#song-box { 
-    width: 400px;
-    height: 200px;
-    margin-left: 800px;
-    margin-top: 400px;
-    background-color: lightgray;
+.card {
+    text-align: center;
+    display: flex;
+    align-content: center;
+    margin-top: 25%;
+    width: 600px;
+    margin-left: auto;
+    margin-right: 14%;
 }
+
