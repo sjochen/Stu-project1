@@ -49,7 +49,12 @@ $('#submit').on('click', function (event) {
             musicDiv.append(link);
             musicDiv.addClass('music-div');
             musicDiv.addClass('card');
-            musicDiv.addClass('text-light');
+
+            musicDiv.addClass('text-white');
+            
+
+           
+
 
             $('#results').append(musicDiv);
         }
