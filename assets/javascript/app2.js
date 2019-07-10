@@ -65,8 +65,10 @@ $(".login").on("click", function () {
     var callbackURL = window.location.href; // the current web page
     spotify.login(clientId, callbackURL);
 });
-$("#search").on("click", function () {
+$("#search").on("click", function (event) {
+    event.preventDefault();
     //Spotify stuff
+    $('#song-box').empty();
     var searchTerms = $("#name").val().trim();
     mySearch(searchTerms);
     function mySearch(searchTerms) {
