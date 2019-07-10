@@ -42,7 +42,7 @@ $('#submit').on('click', function (event) {
 
             var musicDiv = $('<div>');
 
-            var artistName = $('<p>').text("Artist: ");
+            var artistName = $('<p>').text("");
             var date = $('<p>').text("Date: " + moment(results[i].datetime_local, 'YYYY-MM-DD HH:mm').format('MMMM Do YYYY, hh:mm A'));
             var name = $('<p>').text(results[i].venue.name);
             var address = $('<p>').text(results[i].venue.address);
@@ -72,6 +72,7 @@ $('#submit').on('click', function (event) {
             musicDiv.append(address2);
             musicDiv.append(link);
             musicDiv.addClass('music-div');
+            musicDiv.addClass('card');
 
             $('#results').append(musicDiv);
         }
