@@ -4,8 +4,12 @@
     align-content: center;
     height: 100%;
     margin-left: 0%;
-    width: 15%;
+    width: 25%;
+    border-radius: 0;
 }
 .song-link {
     margin-top: 50px;
+}
+#breadcrumbs {
+    margin-top: 150%;
 }
