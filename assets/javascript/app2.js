@@ -25,6 +25,7 @@ $('#submit').on('click', function (event) {
             var link = $('<a>').text("Click Here to Get Tickets from SeatGeek");
 
             link.attr('href', results[i].url);
+            link.addClass('text-warning');
             var sing = $('<div>');
             var art;
 
@@ -48,6 +49,7 @@ $('#submit').on('click', function (event) {
             musicDiv.append(link);
             musicDiv.addClass('music-div');
             musicDiv.addClass('card');
+            musicDiv.addClass('text-light');
 
             $('#results').append(musicDiv);
         }
@@ -85,7 +87,7 @@ $("#search").on("click", function () {
             var songArtist = data.tracks.items[i].artists[0].name;
             var songDiv = $('<div>');
             var songLink = $('<a>').attr('href', songURL);
-            songLink.addClass('text-primary')
+            songLink.addClass('text-warning')
             songLink.attr('target', '_blank');
             songLink.text('Click Here to listen to ' + '"' + songName + '"' + ' by ' + songArtist)
             songDiv.prepend(songLink);
