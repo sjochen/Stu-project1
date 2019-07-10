@@ -56,7 +56,7 @@ $('#submit').on('click', function (event) {
       var link = $('<a>').text("Click Here to Purchase Ticket");
 
       link.attr('href', results[i].url);
-
+      link.addClass('text-warning');
      
       var sing = $('<div>');
       var artistName = $('<p>').text("Artist: ");
@@ -81,6 +81,7 @@ $('#submit').on('click', function (event) {
       musicDiv.append(link);
       musicDiv.addClass('music-div');
       musicDiv.addClass('card');
+      musicDiv.addClass('text-color');
       $('.music').append(musicDiv);
 
 
