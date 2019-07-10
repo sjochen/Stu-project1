@@ -9,3 +9,14 @@
 .song-link {
     margin-top: 50px;
 }
+
+body {
+    float: right;
+    width: 75%;
+    background-image: url(bgimg.jpg);
+    background-size: 100%; 
+}
+
+.music-div {
+    width: 50%;
+}
