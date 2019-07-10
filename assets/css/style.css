@@ -47,4 +47,9 @@ footer {
 
 .btn {
     background-color: rgb(16, 16, 172);
+    border-color: rgb(9, 9, 97); 
+}
+
+p {
+    margin-bottom: 0px;
 }

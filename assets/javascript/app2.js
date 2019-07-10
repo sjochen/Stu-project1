@@ -2,7 +2,7 @@ $('#submit').on('click', function (event) {
     event.preventDefault();
     var area = $('#area').val();
     var range = $('#range').val();
-    var queryURL = "https://api.seatgeek.com/2/events?per_page=25&geoip=" + area + "&range=" + range + "mi&client_id=ODgwMzQ3NHwxNTYyMTA4NDA2LjE0";
+    var queryURL = "https://api.seatgeek.com/2/events?per_page=75&geoip=" + area + "&range=" + range + "mi&client_id=ODgwMzQ3NHwxNTYyMTA4NDA2LjE0";
 
 
     $.ajax({
@@ -15,48 +15,46 @@ $('#submit').on('click', function (event) {
 
         for (var i = 0; i < results.length; i++) {
 
-            var musicDiv = $('<div>');
+            if (results[i].type === "concert") {
+                var musicDiv = $('<div>');
 
-            var artistName = $('<p>').text("");
-            var date = $('<p>').text("Date: " + moment(results[i].datetime_local, 'YYYY-MM-DD HH:mm').format('MMMM Do YYYY, hh:mm A'));
-            var name = $('<p>').text(results[i].venue.name);
-            var address = $('<p>').text(results[i].venue.address);
-            var address2 = $('<p>').text(results[i].venue.extended_address);
-            var link = $('<a>').text("Click Here to Get Tickets from SeatGeek");
+                var artistName = $('<h5>').text("");
+                var date = $('<p>').text("Date: " + moment(results[i].datetime_local, 'YYYY-MM-DD HH:mm').format('MMMM Do YYYY, hh:mm A'));
+                var name = $('<p>').text(results[i].venue.name);
+                var address = $('<p>').text(results[i].venue.address);
+                var address2 = $('<p>').text(results[i].venue.extended_address);
+                var link = $('<a>').text("Click Here to Get Tickets from SeatGeek");
 
-            link.attr('href', results[i].url);
-            link.addClass('text-warning');
-            var sing = $('<div>');
-            var art;
+                link.attr('href', results[i].url);
+                link.addClass('text-warning');
+                var sing = $('<div>');
+                var art;
 
-            for (var j = 0; j < results[i].performers.length; j++) {
+                for (var j = 0; j < results[i].performers.length; j++) {
 
-                var performers = results[i].performers[j].name;
-                if (j === 0) {
-                    art = artistName.append(performers);
-                } else {
-                    art = artistName.append(", " + performers);
+                    var performers = results[i].performers[j].name;
+                    if (j === 0) {
+                        art = artistName.append(performers);
+                    } else {
+                        art = artistName.append(", " + performers);
+                    }
                 }
+
+                sing.append(art);
+
+                musicDiv.append(sing);
+                musicDiv.append(date);
+                musicDiv.append(name);
+                musicDiv.append(address);
+                musicDiv.append(address2);
+                musicDiv.append(link);
+                musicDiv.addClass('music-div');
+                musicDiv.addClass('card');
+
+                musicDiv.addClass('text-white');
+
+                $('#results').append(musicDiv);
             }
-
-            sing.append(art);
-
-            musicDiv.append(sing);
-            musicDiv.append(date);
-            musicDiv.append(name);
-            musicDiv.append(address);
-            musicDiv.append(address2);
-            musicDiv.append(link);
-            musicDiv.addClass('music-div');
-            musicDiv.addClass('card');
-
-            musicDiv.addClass('text-white');
-            
-
-           
-
-
-            $('#results').append(musicDiv);
         }
     })
 });
