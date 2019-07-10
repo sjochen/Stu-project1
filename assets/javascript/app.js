@@ -33,7 +33,7 @@ $('#submit').on('click', function (event) {
       var songLink = $('<a>').attr('href', songURL);
       songLink.addClass('text-warning')
       songLink.attr('target', '_blank');
-      songLink.text('Click Here to listen to ' + '"' +songName + '"' + ' by ' + songArtist)
+      songLink.text('Click Here to listen to ' + '"' + songName + '"' + ' by ' + songArtist)
       songDiv.append(songLink);
       $('#song-box').append(songDiv);
     };
@@ -49,46 +49,43 @@ $('#submit').on('click', function (event) {
     console.log(results);
     for (var i = 0; i < results.length; i++) {
 
+        var musicDiv = $('<div>');
+        var date = $('<p>').text("Date: " + moment(results[i].datetime_local, 'YYYY-MM-DD HH:mm').format('MMMM Do YYYY, hh:mm A'));
+        var location = $('<p>').text("Location: " + results[i].venue.display_location);
+        var link = $('<a>').text("Click Here to Purchase Ticket");
 
-      var musicDiv = $('<div>');
-      var date = $('<p>').text("Date: " + moment(response.events[i].datetime_local, 'YYYY-MM-DD HH:mm').format('MMMM Do YYYY, hh:mm A'));
-      var location = $('<p>').text("Location: " + results[i].venue.display_location);
-      var link = $('<a>').text("Click Here to Purchase Ticket");
+        link.attr('href', results[i].url);
+        link.addClass('text-warning');
 
-      link.attr('href', results[i].url);
-      link.addClass('text-warning');
-     
-      var sing = $('<div>');
-      var artistName = $('<p>').text("Artist: ");
-      var art;
+        var sing = $('<div>');
+        var artistName = $('<h5>').text("");
+        var art;
 
-      for (var j = 0; j < results[i].performers.length; j++) {
+        for (var j = 0; j < results[i].performers.length; j++) {
 
 
-        var performers = results[i].performers[j].name;
-        if (j === 0) {
-          art = artistName.append(performers);
-        } else {
-          art = artistName.append(", " + performers);
+          var performers = results[i].performers[j].name;
+          if (j === 0) {
+            art = artistName.append(performers);
+          } else {
+            art = artistName.append(", " + performers);
+          }
         }
-      }
-      sing.append(art);
+        sing.append(art);
 
-      console.log(art);
-      musicDiv.append(sing);
-      musicDiv.append(location);
-      musicDiv.append(date);
-      musicDiv.append(link);
-      musicDiv.addClass('music-div');
-      musicDiv.addClass('card');
-      musicDiv.addClass('text-white');
-      $('.music').append(musicDiv);
-
-
+        console.log(art);
+        musicDiv.append(sing);
+        musicDiv.append(location);
+        musicDiv.append(date);
+        musicDiv.append(link);
+        musicDiv.addClass('music-div');
+        musicDiv.addClass('card');
+        musicDiv.addClass('text-white');
+        $('.music').append(musicDiv);
     }
   }
   )
-  
+
   $('#name').val('');
 
 });
