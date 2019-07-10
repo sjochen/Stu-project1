@@ -21,8 +21,14 @@ body {
 
 .music-div {
     width: 50%;
+    margin-bottom: 5px;
+    background-color: rgba(73, 69, 69, 0.8);
 }
 
 #breadcrumbs {
     margin-top: 150%;
+}
+
+.text-color {
+    color: white;
 }
