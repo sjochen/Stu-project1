@@ -1,7 +1,7 @@
 #song-card {
     text-align: center;
     display: flex;
-    align-content: center;
+    align-items: center;
     height: 100%;
     margin-left: 0%;
     width: 25%;
@@ -25,4 +25,10 @@ body {
 
 #breadcrumbs {
     margin-top: 150%;
+}
+.jumbotron {
+    border-radius: 0;
+}
+.breadcrumb {
+    margin-left: 20%;
 }

@@ -21,7 +21,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -47,20 +47,21 @@
     </div>
     <div id="song-card" class="card fixed-top bg-dark">
         <div class="card-body">
-          <h6 class="card-title mb-2 text-light">Search to hear artists songs!</h6>
-          <p class="card-subtitle mb-2 text-muted">You must log in with spotify.</p>
-          <input class="form-control" id="name" type="text" placeholder="Enter Artist Here">
-          <button class="btn btn-primary login">Log in</button>
-          <button class="btn btn-primary" id="search">Search</button>
-          <div id="song-box"></div>
-          <div id="breadcrumbs">
-            <button class="btn btn-primary" id="back"><a class="text-light" href="index.html">Home</a></button>
-            <button class="btn btn-primary" id="area-crumb"><a class="text-light" href="artists.html">Search By Artist</a></button>
-          </div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-dark">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="artists.html">Artists</a></li>
+                    <li class="breadcrumb-item"><a href="area.html">Area</a></li>
+                </ol>
+            </nav>
+            <h6 class="card-title mb-2 text-light">Search to hear artists songs!</h6>
+            <p class="card-subtitle mb-2 text-warning">You must log in with spotify to use this feature.</p>
+            <input class="form-control" id="name" type="text" placeholder="Enter Artist Here">
+            <br>
+            <button class="btn btn-primary login">Log in</button>
+            <button class="btn btn-primary" id="search">Search</button>
+            <div id="song-box"></div>
         </div>
-      </div>
-        <button class="btn btn-primary" id="back"><a href="index.html">Home</a></button>
-    </div>
 </body>
 
 <script src="assets/javascript/app2.js"></script>
