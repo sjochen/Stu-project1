@@ -4,6 +4,7 @@
 
 $('#submit').on('click', function (event) {
   event.preventDefault();
+  $('.music').empty();
   var artist = $('#name').val();
   var queryURL = "https://api.seatgeek.com/2/events?performers.slug=" + artist.split(' ').join('-') + "&client_id=ODgwMzQ3NHwxNTYyMTA4NDA2LjE0";
   //Spotify stuff
@@ -56,8 +57,7 @@ $('#submit').on('click', function (event) {
 
       link.attr('href', results[i].url);
 
-      musicDiv.addClass('music-div');
-
+     
       var sing = $('<div>');
       var artistName = $('<p>').text("Artist: ");
       var art;
@@ -76,17 +76,20 @@ $('#submit').on('click', function (event) {
 
       console.log(art);
       musicDiv.append(sing);
-      musicDiv.append(date)
       musicDiv.append(location);
       musicDiv.append(date);
       musicDiv.append(link);
-
-      $('.container').append(musicDiv);
+      musicDiv.addClass('music-div');
+      musicDiv.addClass('card');
+      $('.music').append(musicDiv);
 
 
     }
   }
   )
+  
+  $('#name').val('');
+
 });
 
 //Spotify stuff
@@ -95,3 +98,4 @@ $(".login").on("click", function () {
   var callbackURL = window.location.href; // the current web page
   spotify.login(clientId, callbackURL);
 });
+
