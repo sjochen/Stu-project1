@@ -6,7 +6,7 @@ $('#submit').on('click', function (event) {
   event.preventDefault();
   $('.music').empty();
   var artist = $('#name').val();
-  var queryURL = "https://api.seatgeek.com/2/events?performers.slug=" + artist.split(' ').join('-') + "&client_id=ODgwMzQ3NHwxNTYyMTA4NDA2LjE0";
+  var queryURL = "https://api.seatgeek.com/2/events?per_page=75&performers.slug=" + artist.split(' ').join('-') + "&client_id=ODgwMzQ3NHwxNTYyMTA4NDA2LjE0";
   //Spotify stuff
   var searchTerms = $("#name").val().trim();
   mySearch(searchTerms);
