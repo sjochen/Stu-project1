@@ -29,12 +29,22 @@ body {
     margin-top: 150%;
 }
 
-.text-color {
-    color: white;
-}
+
 .jumbotron {
     border-radius: 0;
 }
 .breadcrumb {
     margin-left: 20%;
+}
+
+footer {
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.btn {
+    background-color: rgb(16, 16, 172);
 }

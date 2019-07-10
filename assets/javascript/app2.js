@@ -25,6 +25,7 @@ $('#submit').on('click', function (event) {
             var link = $('<a>').text("Click Here to Get Tickets from SeatGeek");
 
             link.attr('href', results[i].url);
+            link.addClass('text-warning');
             var sing = $('<div>');
             var art;
 
@@ -48,7 +49,8 @@ $('#submit').on('click', function (event) {
             musicDiv.append(link);
             musicDiv.addClass('music-div');
             musicDiv.addClass('card');
-
+            musicDiv.addClass('text-white');
+            
             $('#results').append(musicDiv);
         }
     })
